@@ -1,3 +1,6 @@
+<script setup>
+  import ButtonPage from './components/ButtonPage.vue'
+</script>
 <template>
   <div class="ocr-bakery">
     <div class="mdl-wrap">
@@ -14,7 +17,7 @@
     </div>
     <div class="mdl-wrap"> 
         <div class="mdl-paragraph"><p>총 <b>1,824</b>명이 빵을 구웠어요!</p></div>
-        <div class="mdl-btn-wrap"></div>
+        <div class="mdl-btn-wrap"><ButtonPage /></div>
   </div>
   </div>
 </template>
