@@ -1,3 +1,8 @@
+<template>
+    <button type="button" class="mdl-btn" data-style="basic" data-icon-after="ico_bread"><span>나만의 빵 만들기</span></button>
+    <button type="button" class="mdl-btn" data-style="second"><span>결과 다시보기</span></button>
+</template>
+<style>
   .mdl-btn-wrap{
     margin-top: 24px;
     padding: 0 40px;
@@ -23,3 +28,4 @@
     box-shadow: none;
   }
   .mdl-btn + .mdl-btn{margin-top: 16px;}
+</style>

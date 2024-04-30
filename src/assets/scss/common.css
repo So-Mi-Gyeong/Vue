@@ -1,6 +1,5 @@
 @import url("./reset.scss");
 @import url("./font.scss");
-@import url("./button.scss");
 body {
   background-color: #FFE8BF;
   padding-top: 44px;

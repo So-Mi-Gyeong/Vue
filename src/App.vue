@@ -14,10 +14,7 @@
     </div>
     <div class="mdl-wrap"> 
         <div class="mdl-paragraph"><p>총 <b>1,824</b>명이 빵을 구웠어요!</p></div>
-        <div class="mdl-btn-wrap">
-            <button type="button" class="mdl-btn" data-style="basic" data-icon-after="ico_bread"><span>나만의 빵 만들기</span></button>
-            <button type="button" class="mdl-btn" data-style="second"><span>결과 다시보기</span></button>
-        </div>
+        <div class="mdl-btn-wrap"></div>
   </div>
   </div>
 </template>
