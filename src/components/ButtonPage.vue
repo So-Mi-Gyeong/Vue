@@ -7,7 +7,6 @@
     margin-top: 24px;
     padding: 0 40px;
   }
-
   .mdl-btn{
     width: 100%;
     height: 60px;

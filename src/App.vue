@@ -1,5 +1,6 @@
 <script setup>
   import ButtonPage from './components/ButtonPage.vue'
+  import ModalPage from './components/ModalPage.vue'
 </script>
 <template>
   <div class="ocr-bakery">
@@ -18,8 +19,9 @@
     <div class="mdl-wrap"> 
         <div class="mdl-paragraph"><p>총 <b>1,824</b>명이 빵을 구웠어요!</p></div>
         <div class="mdl-btn-wrap"><ButtonPage /></div>
+    </div>
   </div>
-  </div>
+  <ModalPage />
 </template>
 
 <style scoped lang="scss">
@@ -45,7 +47,6 @@
     margin: 16px auto 0;
   }
   .mdl-subject-tit img{width: 100%;}
-
   .mdl-subject-txt{
     margin-top: 16px;
     font-size: 16px;
@@ -53,7 +54,6 @@
     line-height: 24px;
     color: #564335;
   }
-
   .ocr-bakery-baking{
     height: 264px;
     margin-top: 20px;
