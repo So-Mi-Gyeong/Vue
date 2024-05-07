@@ -24,8 +24,10 @@ table {
 	border-spacing: 0;
 }
 button{
-	background: none;
+	background: transparent;
 	border: 0;
 	padding: 0;
 	margin: 0;
+    font: inherit;
+    cursor: pointer;
 }

@@ -43,3 +43,36 @@ body{
         }
     }
 }
+
+.bakery-txt{
+    &-group{
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    &-em{
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 2.4rem;
+      color: #564335;
+    }
+    &-tit{
+      width: 26rem;
+      margin: 1.6rem auto 0;
+      img{width: 100%;}
+    }
+    &-txt{
+      margin-top: 1.6rem;
+      font-size: 1.6rem;
+      font-weight: 300;
+      line-height: 2.4rem;
+      color: #564335;
+    }
+    &-paragraph{
+      font-size: 1.4rem;
+      font-weight: 300;
+      line-height: 2.3rem;
+      color: #564335;
+      text-align: center;
+    }
+  }

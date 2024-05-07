@@ -1,5 +1,3 @@
-<script>
-</script>
 <template>
     <section class="mdl-modal" data-id="NMMC_3_10L" data-type="bottom" aria-hidden="false"> 
         <div class="mdl-modal-wrap">

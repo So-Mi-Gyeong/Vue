@@ -19,17 +19,6 @@ const routes = [
     path: '/main',
     name: 'bakery',
     component: () => import('../views/bakeryView.vue')
-  },
-  {
-    path: '/guide',
-    // component: LayoutMain,
-    children: [
-      {
-        path: '/components',
-        name: "ButtonPage",
-        component: () => import('../components/ButtonPage.vue')
-      }
-    ]
   }
 ]
 
