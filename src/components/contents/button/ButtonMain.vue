@@ -1,8 +1,10 @@
+<script setup>
+</script>
 <template>
     <button type="button" class="bakery-btn" data-style="basic" data-icon-after="ico_bread"><span>나만의 빵 만들기</span></button>
     <button type="button" class="bakery-btn" data-style="second"><span>결과 다시보기</span></button>
 </template>
-<style lang="scss">
+<style scoped lang="scss">
   .bakery-btn-wrap{
     margin-top: 2.4rem;
     padding: 0 4rem;

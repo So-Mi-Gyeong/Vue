@@ -1,3 +1,6 @@
+<script setup>
+  import Btn from '../../contents/button/ButtonBase.vue'
+</script>
 <template>
     <section class="mdl-modal" data-id="NMMC_3_10L" data-type="bottom" aria-hidden="false"> 
         <div class="mdl-modal-wrap">
@@ -24,10 +27,7 @@
                 </div>
             </div>
             <div class="mdl-modal-footer">
-                <div class="mdl-btn-wrap">
-                    <button type="button" class="mdl-btn" data-style="primary"><span>시작하기</span></button>
-                </div>
-                <button type="button" class="mdl-btn" data-style="btn-text"><span>다시 보지 않기</span></button>
+                <div class="mdl-btn-wrap"><Btn /></div>
             </div>
         </div>
     </section>
