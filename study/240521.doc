@@ -1,0 +1,113 @@
+
+
+[HTML] ol 태그 속성 start
+
+start="1"
+=> li의 속성이 어디부터 시작하는지에 대한 내용
+
+
+[CSS] counter
+
+위 ol태그 사용하면서 li의 순번을 자동으로 넘버링해주는 기능이다.
+
+1. 카운터 값 조작하기
+counter를 사용하려면 먼저 counter-reset 속성(초기값 0)을 사용하여 초기화 해야합니다.
+동일한 속성으로 값을 특정 값으로 바꿀 수도 있습니다.
+초기화 된 counter의 값은 counter-increment 에 따라 증가하거나 감소합니다.
+conter의 이름으로 "none", "inherit", "initial"은 사용불가합니다.
+이런 이름을 사용하면 선언은 무시됩니다.
+
+2. 카운터 표시하기
+
+counter의 값은 content 속성에서 counter나 counters 함수를 사용하여 표시할 수 있습니다.
+counter 함수는 'counter(name)' 와 'counter(name, style)' 두 가지 형태로 사용할 수 있습니다.
+생성된 텍스트는 가상 요소가 속한 범위에 있는 이름(name)의 가장 안쪽 counter의 값입니다.
+텍스트는 지정된 서식(기본값은 십진수)으로 뿌려집니다.
+
+counters 함수도 'counters(name, string)'나 'name, string, style' 두 가지 형태로 사용할 수 있습니다.
+생성된 텍스트는 가상 요소가 속한 모든 범위에서 지정된 이름을 가진 counters의 값으로, 바깥 쪽부터 안쪽까지 값이 주어지며 지정된 문자열로 구분됩니다. counters는 지정된 스타일(기본값은 십진수)로 렌더링 됩니다.
+
+3. 예제
+
+[예제 1]
+//HTMl
+<ol class="ranking50" start="4" data-ranking="list">
+	<li class="ranking50-item">
+		<div class="ranking50-group">
+			<div class="ranking50-img" data-type="character">
+				<img src="../../img/character-default.png" alt="">
+			</div>
+			<dl class="ranking50-info">
+				<dt class="ranking50-name">오*어</dt>
+				<dd class="ranking50-step">9,786 걸음</dd>
+			</dl>
+		</div>
+	</li>
+	<li class="ranking50-item">
+		<div class="ranking50-group">
+			<div class="ranking50-img" data-type="character">
+				<img src="../../img/character-default.png" alt="">
+			</div>
+			<dl class="ranking50-info">
+				<dt class="ranking50-name">오*어</dt>
+				<dd class="ranking50-step">9,786 걸음</dd>
+			</dl>
+		</div>
+	</li>
+</ol>
+
+//CSS
+.ranking50{
+	counter-reset: dep1 3; //li의 시작을 4부터 하겠다.
+	&-item {
+		counter-increment: dep1 1; //li의 넘버가 1단위로 늘어나겠다.(1.2.3 ~)
+		&:before {
+			content: counter(dep1);//dep1을 가져오겠다.
+		}
+	}
+	.ranking50-item{
+		counter-increment: dep1 1;
+		&::before{
+			content: counter(dep1);
+		}
+	}
+}
+
+[예제 2]
+//HTML                
+<ol class="ranking50" start="1" data-ranking="list">
+	<li class="ranking50-item">
+		<div class="ranking50-group">
+			<dl class="ranking50-info">
+				<div class="ranking50-title">
+					<dt class="ranking50-name">팀명공백포함열자열자</dt>
+					<dd class="ranking50-rank" data-rank="down"><span>99</span></dd>
+				</div>
+				<dd class="ranking50-step">7,248 걸음</dd>
+			</dl>
+		</div>
+	</li>
+	<li class="ranking50-item">
+		<div class="ranking50-group">
+			<dl class="ranking50-info">
+				<div class="ranking50-title">
+					<dt class="ranking50-name">팀명공백포함열자</dt>
+					<dd class="ranking50-rank" data-rank="maintain"></dd>
+				</div>
+				<dd class="ranking50-step">7,248 걸음</dd>
+			</dl>
+		</div>
+	</li>
+</ol>
+
+//CSS
+.ranking50{
+	counter-reset: dep1 0; //li의 시작을 1부터 하겠다.
+	&-item {
+		counter-increment: dep1 1; //li의 넘버가 1단위로 늘어나겠다.(1.2.3 ~)
+		&:before {
+			content: counter(dep1);//dep1을 가져오겠다.
+		}
+	}
+}
+
