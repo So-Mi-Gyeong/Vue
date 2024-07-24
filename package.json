@@ -1,4 +1,5 @@
 {
+  "homepage": "https://so-mi-gyeong.github.io/Vue/",
   "name": "vue-ocare",
   "version": "0.1.0",
   "private": true,
@@ -23,6 +24,7 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "gh-pages": "^6.1.1",
     "node-sass": "^9.0.0",
     "sass": "^1.75.0",
     "sass-loader": "^10.5.2"
@@ -46,5 +48,9 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  }
 }
