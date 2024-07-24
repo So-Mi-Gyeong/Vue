@@ -1,10 +1,20 @@
 <script setup>
-  import Btn from '../../contents/button/ButtonBase.vue'
+//   import Btn from '../../contents/button/ButtonBase.vue'
+// //   import ScriptPage from '../../assets/js/bakery.js'
+
+// function popClose(v) {
+//     const el_modal = document.querySelector('.mdl-modal[data-id="' + v + '"]');
+//     const el_close = el.modal.querySelector('.mdl-modal-close');
+
+//     el_modal.setAttribute('aria-hidden', 'false');
+
+//     !!el_close && el_close.focus();
+// }
 </script>
 <template>
     <section class="mdl-modal" data-id="NMMC_3_10L" data-type="bottom" aria-hidden="false"> 
         <div class="mdl-modal-wrap">
-            <button type="button" class="mdl-modal-close" data-icon="close_large_dark" aria-label="창닫기" onclick="OcareUI.modal.hide('NMMC_3_10L')"></button>
+            <button type="button" class="mdl-modal-close" data-icon="close_large_dark" aria-label="창닫기" @click="popClose()"></button>
             <div class="mdl-modal-body">
                 <div class="mdl-subject">
                     <div class="mdl-subject-group">

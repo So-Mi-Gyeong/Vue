@@ -2,7 +2,8 @@
   import Header from '../components/layout/HeaderBase.vue'
 
   import Btn from '../components/contents/button/ButtonMain.vue'
-  // import ModalStart from './components/contents/modal/ModalStart.vue'
+  import Modal from '../components/contents/modal/ModalStart.vue'
+
 </script>
 <template>
   <div class="ocr-bakery">
@@ -28,7 +29,7 @@
       </div>
     </div>
   </div>
-  <!-- <ModalStart /> -->
+  <Modal/>
 </template>
 
 <style scoped lang="scss">

@@ -1,3 +1,6 @@
+<script>
+
+</script>
 <template>
     <button type="button" class="bakery-btn" data-style="basic"><span>시작하기</span></button>
 </template>
