@@ -1,9 +1,34 @@
-<script setup>
-  import Home from './views/bakeryView.vue'
-</script>
 <template>
-  <Home />
+  <div id="app">
+    <article class="menu">
+      <ul class="menu-list">
+        <li><router-link class="menu-item" to="/">Home</router-link></li>
+        <li><router-link class="menu-item" to="/about">About</router-link></li>
+        <li><router-link class="menu-item" to="/bakery">Bakery</router-link></li>
+      </ul>
+    </article>
+    <router-view></router-view><!-- 이곳에 해당하는 컴포넌트가 렌더링됩니다 -->
+  </div>
 </template>
-
-
-
+<style lang="scss">
+  .menu{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    &-list{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.6rem;
+    }
+    &-item{
+      background-color: #000;
+      padding: .8rem 1.6rem;
+      border-radius: 5rem;
+      color: #fff;
+    }
+  }
+</style>
