@@ -198,8 +198,7 @@
       &[data-section="2"]{
         width: 100%;
         height: 50rem;
-        background: url(../assets/img/osulloc/bn.jpg) no-repeat 0 0;
-        background-size: 100%;
+        background-color: $main-color;
       }
       &[data-section="3"]{
         width: 100%;
