@@ -4,12 +4,17 @@
 @import url("./variable.scss");
 
 html {font-size: 62.5%;}
+@media screen and (max-width: 374px) {
+  .container {font-size: 2vw;}
+  .container * {font-size: 4vw;}
+  .container .ui-content{padding: 5vw;}
+}
+
 body{
     font-family: "KBF", sans-serif;
     color: #666;
     font-size: 1.4rem;
     word-break: keep-all;
-    background-color: #FFE8BF;
     min-height: 100vh;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;

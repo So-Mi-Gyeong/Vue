@@ -83,6 +83,7 @@ function handleClick(button) {
     padding: 8vh 0 calc(env(safe-area-inset-bottom) + 4rem);
     display: flex;
     flex-direction: column;
+    background-color: #FFE8BF;
   }
   &-box {
     width: 100%;

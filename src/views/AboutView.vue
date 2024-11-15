@@ -1,7 +1,7 @@
 <script setup>
-  import { ref, computed } from 'vue'
+  import { ref, computed, onMounted } from 'vue'
 
-  // 각 할 일에 고유한 ID 부여
+  //section1
   let id = 0
 
   const newTodo = ref('')
@@ -26,27 +26,95 @@
   function removeTodo(todo) {
     todos.value = todos.value.filter((t) => t !== todo)
   }
+
+  //section2
+  const pElementRef = ref(null)
+  onMounted(() => {
+    pElementRef.value.textContent = '마운트 되었어요!'
+  })
+
+  //section3
+  const todoId = ref(1)
+  const todoData = ref(null)
+
+  // async function fetchData() {
+  //   todoData.value =  null
+  // }
 </script>
 
 <template>
-  <form @submit.prevent="addTodo">
+  <!-- section1 -->
+   <section>
+    <form @submit.prevent="addTodo">
     <input v-model="newTodo" required placeholder="new todo">
-    <button>Add Todo</button>
-  </form>
-  <ul>
-    <li v-for="todo in filteredTodos" :key="todo.id">
-      <input type="checkbox" v-model="todo.done">
-      <span :class="{ done: todo.done }">{{ todo.text }}</span>
-      <button @click="removeTodo(todo)">X</button>
-    </li>
-  </ul>
-  <button @click="hideCompleted = !hideCompleted">
-    {{ hideCompleted ? 'show all' : 'Hide completed' }}
-  </button>
+    <button class="addBtn">Add Todo</button>
+    </form>
+    <ul>
+      <li v-for="todo in filteredTodos" :key="todo.id">
+        <input type="checkbox" v-model="todo.done">
+        <span :class="{ done: todo.done }">{{ todo.text }}</span>
+        <button class="deleteBtn" @click="removeTodo(todo)">X</button>
+      </li>
+    </ul>
+    <button class="todoBtn" @click="hideCompleted = !hideCompleted">
+      {{ hideCompleted ? 'show all' : 'Hide completed' }}
+    </button>
+   </section>
+
+  <!-- section2 -->
+  <section>
+    <p ref="pElementRef">안녕</p>
+  </section>
+  
+  <!-- section3 -->
+   <section>
+    <p>할 일 id: {{ todoId }}</p>
+    <button class="nextTodoBtn" @click="todoId++" :disabled="!todoData">다음 할 일 가져오기</button>
+    <p>로딩...</p>
+    <pre>{{ todoData }}</pre>
+   </section>
 </template>
 
-<style lang="scss">
-.done{
-  text-decoration: line-through;
+<style scoped lang="scss">
+section{
+  padding: 0 3rem 3rem;
+  border-bottom: .1rem solid #000;
+  & + section{margin-top: 3rem;}
+  &:first-of-type{margin-top: 3rem;}
+}
+.done{text-decoration: line-through;}
+.addBtn{
+  width: fit-content;
+  height: 3rem;
+  padding: 0 2rem;
+  margin-left: 1rem;
+  color: #fff;
+  border-radius: .8rem;
+  background-color: #000;
+}
+.deleteBtn{
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1rem;
+  color: #fff;
+  background-color: #999;
+}
+.todoBtn{
+  width: fit-content;
+  height: 3rem;
+  padding: 0 2rem;
+  margin-top: 1rem;
+  color: #fff;
+  border-radius: .8rem;
+  background-color: #000;
+}
+.nextTodoBtn{
+  width: fit-content;
+  height: 3rem;
+  padding: 0 2rem;
+  margin-top: 1rem;
+  color: #fff;
+  border-radius: .8rem;
+  background-color: #000;
 }
 </style>

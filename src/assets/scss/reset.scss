@@ -1,33 +1,88 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-style: normal;
+html, 
+body, 
+div, 
+span, 
+iframe, 
+h1, h2, h3, h4, h5, h6, p, pre, 
+a, 
+code, 
+em, 
+img, 
+strong, b, u, i, 
+dl, dt, dd, ol, ul, li, 
+fieldset, 
+form, 
+label, 
+legend, 
+table, caption, tbody, tfoot, thead, tr, th, td, 
+article, 
+figure, figcaption, 
+footer, 
+header, 
+section {
+    margin: 0; 
+    padding: 0; 
+    border: 0;
 }
-ol, ul {
-	list-style: none;
+
+/* list */
+ol, 
+ul, 
+li {
+    list-style: none; 
+    margin: 0; 
+    padding: 0;
 }
+
+/* table */
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
+
+/* font */
+body{
+  color: #222;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+a{
+    color: #222; 
+    text-decoration: none;
+}
+
+i,
+em{
+    font-style: normal;
+}
+
+/* button */
 button{
-	background: transparent;
-	border: 0;
-	padding: 0;
-	margin: 0;
-    font: inherit;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    outline: 0;
+    border: 0;
     cursor: pointer;
 }
+
+/* hidden */
+caption,
+// input[type=checkbox],
+input[type=radio],
+.ally-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0); /* 구형 브라우저를 위해 사용 */
+    clip-path: polygon(0 0, 0 0, 0 0); /* inset(50%) 와 동일한 표현 */
+    border: 0;
+}
+
+/* ============================================================== */
