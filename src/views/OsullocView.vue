@@ -48,9 +48,6 @@
         </div>
       </section>
       <section class="osulloc-conten-section" data-section="2"></section>
-      <section class="osulloc-conten-section" data-section="3"></section>
-      <section class="osulloc-conten-section" data-section="4"></section>
-      <section class="osulloc-conten-section" data-section="5"></section>
     </div>
   </article>
 </template>
@@ -63,10 +60,8 @@
       font-style: normal;
   }
 
-  $main-color: #5F6A44;
-  $background-color: #F5F3E5;
-  $button-bg-color: #A5A992;
-  $point-color: #D7A62A;
+  $gray: #AEAEAE;
+  $beige: #DDD8D1;
 
   $fs-base: 1.6rem;
   $fs-large: 3.2rem;
@@ -78,8 +73,8 @@
   }
   .osulloc-menu{
     width: 100%;
-    height: 8rem;
-    background-color: $background-color;
+    height: 5rem;
+    background: #040404;
     box-sizing: border-box;
     &-wrap{
       max-width: 120rem;
@@ -97,7 +92,7 @@
     &-logo{
       font-size: $fs-large;
       font-weight: 700;
-      color: $main-color;
+      color: $gray;
     }
     &-right{
       display: flex;
@@ -108,7 +103,7 @@
         a{
           font-size: $fs-base;
           font-weight: 400;
-          color: $main-color;
+          color: $gray;
         }
       }
     }
@@ -121,7 +116,7 @@
         a{
           font-size: $fs-base;
           font-weight: 400;
-          color: $main-color;
+          color: $gray;
         }
       }
     }
@@ -131,7 +126,8 @@
       &[data-section="1"]{
         width: 100%;
         height: calc(100dvh - 13rem);
-        background-color: $background-color;
+        background: url(../assets/img/osulloc/img-section1.png) no-repeat 0 0;
+        background-size: 409.6rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -149,14 +145,6 @@
             $fs-title: $fs-large;
             font-weight: 700;
             color: #4A4A4A;
-            &::before{
-              content: '';
-              display: block;
-              width: 19rem;
-              height: 6.91rem;
-              background: url(../assets/img/osulloc/ico-tea.png) no-repeat 0 0;
-              background-size: 19rem;
-            }
             span{
               font-size:4rem;
               font-weight: 400;
@@ -186,34 +174,46 @@
             width: 20rem;
             height: 5rem;
             padding: 1rem 0;
+            border: .1rem solid #4A4A4A;
             border-radius: 5.5rem;
-            background-color: $button-bg-color;
+            background-color: transparent;
             font-size: $fs-base;
             font-weight: 700;
-            color: #fff;
-            &:hover{background-color: $main-color;}
+            color: #4A4A4A;
+            &:hover{
+              border: .1rem solid $gray;
+              color: $gray;
+            }
           }
         }
       }
       &[data-section="2"]{
         width: 100%;
-        height: 50rem;
-        background-color: $main-color;
-      }
-      &[data-section="3"]{
-        width: 100%;
         height: 100dvh;
-        background-color: $point-color;
-      }
-      &[data-section="4"]{
-        width: 100%;
-        height: 100dvh;
-        background-color: $main-color;
-      }
-      &[data-section="5"]{
-        width: 100%;
-        height: 100dvh;
-        background-color: $background-color;
+        background-color: $beige;
+        position: relative;
+        &::before{
+          content: '';
+          width: 90%;
+          max-width: 120rem;
+          height: 70rem;
+          background: url(../assets/img/osulloc/img-section1.png) no-repeat 0 0;
+          background-size: 100% 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &::after{
+          content: 'OSULLOC';
+          font-size: 5rem;
+          font-weight: 700;
+          color: #e5e5e5e8;
+          position: absolute;
+          bottom: 15rem;
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
     }
   }
