@@ -4,16 +4,16 @@
   let id = 0
 
   const menus = ref([
-    {id: id++, text: '제품'},
-    {id: id++, text: '취향의 발견'},
-    {id: id++, text: '브랜드'},
-    {id: id++, text: '단체 및 기업 구매'}
-  ])
+  {id: id++, text: '제품', route: '/products'},
+  {id: id++, text: '취향의 발견', route: '/taste-discovery'},
+  {id: id++, text: '브랜드', route: '/brand'},
+  {id: id++, text: '단체 및 기업 구매', route: '/corporate-purchase'}
+])
 
-  const menuSide = ref([
-    { id: id++, text: '로그인'},
-    { id: id++, text: '검색'}
-  ])
+const menuSide = ref([
+  { id: id++, text: '로그인', route: '/login' },
+  { id: id++, text: '검색', route: '/search' }
+])
 </script>
 
 <template>
@@ -24,30 +24,68 @@
         <h1 class="osulloc-menu-logo">오설록</h1>
         <ul class="osulloc-menu-right">
           <li v-for="menu in menus" :key="menu.id">
-            <router-link :to="menu.text">{{ menu.text }}</router-link>
+            <router-link :to="menu.route">{{ menu.text }}</router-link>
           </li>
         </ul>
       </div>
       <ul class="osulloc-menu-side">
         <li v-for="menu in menuSide" :key="menu.id">
-          <router-link :to="menu.text">{{ menu.text }}</router-link>
+          <router-link :to="menu.route">{{ menu.text }}</router-link>
         </li>
       </ul>
       </div>
     </div>
     <div class="osulloc-content">
-      <section class="osulloc-conten-section" data-section="1">
-        <div class="osulloc-conten-group">
-          <h2 class="conten-group-tit">취향의 발견 <span>FIND YOUR TASTE</span></h2>
-          <ul class="conten-group-txt">
+      <section class="osulloc-content-section" data-section="1">
+        <div class="osulloc-content-group">
+          <h2 class="content-group-tit">취향의 발견 <span>FIND YOUR TASTE</span></h2>
+          <ul class="content-group-txt">
             <li>무화과 쇼콜라 블랙티</li>
             <li>마롱 글라세 블랙티</li>
             <li>스윗 히비스커스</li>
           </ul>
-          <button type="button" class="conten-group-btn">바로가기</button>
+          <button type="button" class="content-group-btn">바로가기</button>
         </div>
       </section>
-      <section class="osulloc-conten-section" data-section="2"></section>
+      <section class="osulloc-content-section" data-section="2"></section>
+      <section class="osulloc-content-section" data-section="3">
+        <div class="osulloc-content-info" data-info="1">
+          <ul class="osulloc-content-list">
+            <li>
+              <div class="list-img"><img src="../assets/img/osulloc/content-sample.png" alt=""></div>
+              <div class="list-txt">
+                <em>lorem</em>
+                <strong>Lorem, ipsum.</strong>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sed quisquam soluta inventore consequatur voluptatem quidem itaque facere ad maxime, earum quibusdam et vel ipsum laborum ex illum quod repellendus.</p>
+              </div>
+            </li>
+            <li>
+              <div class="list-img"><img src="../assets/img/osulloc/content-sample.png" alt=""></div>
+              <div class="list-txt">
+                <em>lorem</em>
+                <strong>Lorem, ipsum.</strong>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sed quisquam soluta inventore consequatur voluptatem quidem itaque facere ad maxime, earum quibusdam et vel ipsum laborum ex illum quod repellendus.</p>
+              </div>
+            </li>
+            <li>
+              <div class="list-img"><img src="../assets/img/osulloc/content-sample.png" alt=""></div>
+              <div class="list-txt">
+                <em>lorem</em>
+                <strong>Lorem, ipsum.</strong>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sed quisquam soluta inventore consequatur voluptatem quidem itaque facere ad maxime, earum quibusdam et vel ipsum laborum ex illum quod repellendus.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="osulloc-content-info" data-info="2">
+          <p>Lorem, ipsum.</p>
+        </div>
+        <div class="osulloc-content-info" data-info="3">
+          <p>Lorem, ipsum.</p>
+          <p>Lorem, ipsum.</p>
+          <p>Lorem, ipsum.</p>
+        </div>
+      </section>
     </div>
   </article>
 </template>
@@ -61,7 +99,7 @@
   }
 
   $gray: #AEAEAE;
-  $beige: #DDD8D1;
+  $beige: #ECE6E3;
 
   $fs-base: 1.6rem;
   $fs-large: 3.2rem;
@@ -77,6 +115,7 @@
     background: #040404;
     box-sizing: border-box;
     &-wrap{
+      width: 90%;
       max-width: 120rem;
       margin: 0 auto;
       display: flex;
@@ -121,7 +160,7 @@
       }
     }
   }
-  .osulloc-conten{
+  .osulloc-content{
     &-section{
       &[data-section="1"]{
         width: 100%;
@@ -131,13 +170,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        .osulloc-conten-group{
+        .osulloc-content-group{
           display: flex;
           justify-content: center;
           align-items: center;
           flex-direction: column;
           gap: 1.6rem;
-          .conten-group-tit{
+          .content-group-tit{
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -151,7 +190,7 @@
               color: #4A4A4A;
             }
           }
-          .conten-group-txt{
+          .content-group-txt{
             display: flex;
             justify-content: center;
             align-items: center;
@@ -169,7 +208,7 @@
               &:last-child::after{display: none;}
             }
           }
-          .conten-group-btn{
+          .content-group-btn{
             margin-top: 4rem;
             width: 20rem;
             height: 5rem;
@@ -213,6 +252,105 @@
           bottom: 15rem;
           left: 50%;
           transform: translateX(-50%);
+        }
+      }
+      &[data-section="3"]{
+        width: 100%;
+        height: 100dvh;
+        background-color: $beige;
+        position: relative;
+        .osulloc-content-info{
+          &[data-info="2"],
+          &[data-info="3"]{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 10rem;
+            border-top: .2rem solid #DAD4D1;
+            position: absolute;
+            bottom: 0;
+            p{
+              font-size: 1.5rem;
+              font-weight: 300;
+              line-height: 1;
+              color: #000;
+            }
+          }
+          &[data-info="1"]{
+            height: calc(100% - 20rem);
+            border-top: .2rem solid #DAD4D1;
+            box-sizing: border-box;
+          }
+          &[data-info="2"]{
+            bottom: 10rem;
+            justify-content: center;
+          }
+          &[data-info="3"]{
+            justify-content: space-between;
+            padding: 0 5rem;
+            box-sizing: border-box;
+          }
+        }
+        .osulloc-content-list{
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          li{
+            width: calc(100% / 3);
+            height: 100%;
+            box-sizing: border-box;
+            padding: 5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3.2rem;
+            position: relative;
+            &::after{
+              content: '';
+              width: 2rem;
+              height: 60.1rem;
+              border-right: .1rem solid #DAD4D1;
+              position: absolute;
+              top: 0;
+              right: 0;
+            }
+            &:last-of-type::after{display: none;}
+          }
+          .list-img{
+            width: 30rem;
+            height: 30rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            img{
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .list-txt{
+            display: flex;
+            flex-direction: column;
+            gap: .8rem;
+            text-align: center;
+            em{
+              font-size: 1.5rem;
+              font-weight: 300;
+              line-height: 1;
+              color: #000;
+            }
+            strong{
+              font-size: 2rem;
+              font-weight: 700;
+              line-height: 1;
+              color: #000;
+            }
+            p{
+              font-size: 1.6rem;
+              font-weight: 300;
+              line-height: 1.8rem;
+              color: #000;
+            }
+          }
         }
       }
     }
