@@ -303,13 +303,14 @@ const menuSide = ref([
             padding: 5rem;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
             gap: 3.2rem;
             position: relative;
             &::after{
               content: '';
               width: 2rem;
-              height: 60.1rem;
+              height: 100%;
               border-right: .1rem solid #DAD4D1;
               position: absolute;
               top: 0;
@@ -318,7 +319,8 @@ const menuSide = ref([
             &:last-of-type::after{display: none;}
           }
           .list-img{
-            width: 30rem;
+            width: 100%;
+            max-width: 30rem;
             height: 30rem;
             border-radius: 1rem;
             overflow: hidden;

@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, computed, onMounted } from 'vue'
+  import { ref, computed, onMounted, watch } from 'vue'
 
   //section1
   let id = 0
@@ -37,9 +37,16 @@
   const todoId = ref(1)
   const todoData = ref(null)
 
-  // async function fetchData() {
-  //   todoData.value =  null
-  // }
+  async function fetchData(){
+    todoData.value = null
+    const res = await fetch(
+      `https://jsonplaceholder.typicode.com/todos/${todoId.value}`
+    )
+    todoData.value = await res.json()
+  }
+
+  fetchData()
+  watch(todoId, fetchData)
 </script>
 
 <template>
@@ -70,8 +77,11 @@
    <section>
     <p>할 일 id: {{ todoId }}</p>
     <button class="nextTodoBtn" @click="todoId++" :disabled="!todoData">다음 할 일 가져오기</button>
-    <p>로딩...</p>
-    <pre>{{ todoData }}</pre>
+    <p v-if="!todoData">로딩...</p>
+    <pre v-else>{{ todoData }}</pre>
+   </section>
+
+   <section>
    </section>
 </template>
 
