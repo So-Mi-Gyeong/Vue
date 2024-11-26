@@ -52,7 +52,7 @@ const menuSide = ref([
         <div class="osulloc-content-info" data-info="1">
           <ul class="osulloc-content-list">
             <li>
-              <div class="list-img"><img src="../assets/img/osulloc/content-sample.png" alt=""></div>
+              <div class="list-img"><img src="../assets/img/osulloc/img-list01.png" alt=""></div>
               <div class="list-txt">
                 <em>lorem</em>
                 <strong>Lorem, ipsum.</strong>
@@ -60,7 +60,7 @@ const menuSide = ref([
               </div>
             </li>
             <li>
-              <div class="list-img"><img src="../assets/img/osulloc/content-sample.png" alt=""></div>
+              <div class="list-img"><img src="../assets/img/osulloc/img-list01.png" alt=""></div>
               <div class="list-txt">
                 <em>lorem</em>
                 <strong>Lorem, ipsum.</strong>
@@ -68,7 +68,7 @@ const menuSide = ref([
               </div>
             </li>
             <li>
-              <div class="list-img"><img src="../assets/img/osulloc/content-sample.png" alt=""></div>
+              <div class="list-img"><img src="../assets/img/osulloc/img-list01.png" alt=""></div>
               <div class="list-txt">
                 <em>lorem</em>
                 <strong>Lorem, ipsum.</strong>
@@ -321,7 +321,7 @@ const menuSide = ref([
           .list-img{
             width: 100%;
             max-width: 30rem;
-            height: 30rem;
+            height: 40rem;
             border-radius: 1rem;
             overflow: hidden;
             img{
