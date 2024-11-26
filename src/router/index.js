@@ -37,6 +37,10 @@ const routes = [
   }
 ];
 
+module.exports = {
+  publicPath: '/Vue/',
+};
+
 // 라우터 인스턴스 생성
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
