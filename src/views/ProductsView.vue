@@ -12,77 +12,77 @@
         <li>
           <img src="../assets/img/osulloc/content-sample.png" alt="">
           <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, voluptatem.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </li>
         <li>
           <img src="../assets/img/osulloc/content-sample.png" alt="">
           <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, voluptatem.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </li>
         <li>
           <img src="../assets/img/osulloc/content-sample.png" alt="">
           <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, voluptatem.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </li>
         <li>
           <img src="../assets/img/osulloc/content-sample.png" alt="">
           <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, voluptatem.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </li>
         <li>
           <img src="../assets/img/osulloc/content-sample.png" alt="">
           <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, voluptatem.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </li>
         <li>
           <img src="../assets/img/osulloc/content-sample.png" alt="">
           <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, voluptatem.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </li>
         <li>
           <img src="../assets/img/osulloc/content-sample.png" alt="">
           <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, voluptatem.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </li>
         <li>
           <img src="../assets/img/osulloc/content-sample.png" alt="">
           <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, voluptatem.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </li>
         <li>
           <img src="../assets/img/osulloc/content-sample.png" alt="">
           <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, voluptatem.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </li>
         <li>
           <img src="../assets/img/osulloc/content-sample.png" alt="">
           <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, voluptatem.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </li>
         <li>
           <img src="../assets/img/osulloc/content-sample.png" alt="">
           <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, voluptatem.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </li>
         <li>
           <img src="../assets/img/osulloc/content-sample.png" alt="">
           <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, voluptatem.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </li>
         <li>
           <img src="../assets/img/osulloc/content-sample.png" alt="">
           <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, voluptatem.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </li>
         <li>
           <img src="../assets/img/osulloc/content-sample.png" alt="">
           <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, voluptatem.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </li>
         <li>
           <img src="../assets/img/osulloc/content-sample.png" alt="">
           <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, voluptatem.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </li>
       </ul>
     </div>
