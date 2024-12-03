@@ -6,6 +6,10 @@
         <li><router-link class="menu-item" to="/about">About</router-link></li>
         <li><router-link class="menu-item" to="/bakery">Bakery</router-link></li>
         <li><router-link class="menu-item" to="/osulloc">Osulloc</router-link></li>
+
+        <!-- guide -->
+        <li><router-link class="menu-item" to="/guideButton">Button</router-link></li>
+        <li><router-link class="menu-item" to="/guideTooltip">Tooltip</router-link></li>
       </ul>
     </article>
     <router-view></router-view><!-- 이곳에 해당하는 컴포넌트가 렌더링됩니다 -->

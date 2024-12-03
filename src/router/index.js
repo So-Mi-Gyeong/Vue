@@ -6,6 +6,8 @@ import AboutView from '../views/AboutView.vue';
 import BakeryView from '../views/bakeryView.vue';
 import OsullocView from '../views/OsullocView.vue';
 import ProductsView from '../views/ProductsView.vue';
+import GuideButton from '../views/GuideButton.vue';
+import GuideTooltip from '../views/GuideTooltip.vue';
 
 // 라우터 설정
 const routes = [
@@ -24,6 +26,7 @@ const routes = [
     name: 'Bakery',
     component: BakeryView
   },
+
   // osulloc 페이지 경로
   {
     path: '/osulloc',  
@@ -34,7 +37,20 @@ const routes = [
     path: '/products',
     name: 'Products',
     component: ProductsView
+  },
+
+  // guide 페이지 경로
+  {
+    path: '/guideButton',  
+    name: 'GuideButton',
+    component: GuideButton
+  },
+  {
+    path: '/guideTooltip',
+    name: 'GuideTooltip',
+    component: GuideTooltip
   }
+
 ];
 
 // 라우터 인스턴스 생성
