@@ -1,4 +1,18 @@
 <script setup>
+  import { ref } from 'vue';
+
+  const products = ref([
+    { title: 'Product 1', description: 'Lorem ipsum dolor sit amet.', image: '/img/osulloc/content-sample.png' },
+    { title: 'Product 2', description: 'Lorem ipsum dolor sit amet.', image: '/img/osulloc/content-sample.png' },
+    { title: 'Product 3', description: 'Lorem ipsum dolor sit amet.', image: '/img/osulloc/content-sample.png' },
+    { title: 'Product 4', description: 'Lorem ipsum dolor sit amet.', image: '/img/osulloc/content-sample.png' },
+    { title: 'Product 5', description: 'Lorem ipsum dolor sit amet.', image: '/img/osulloc/content-sample.png' },
+    { title: 'Product 6', description: 'Lorem ipsum dolor sit amet.', image: '/img/osulloc/content-sample.png' },
+    { title: 'Product 7', description: 'Lorem ipsum dolor sit amet.', image: '/img/osulloc/content-sample.png' },
+    { title: 'Product 8', description: 'Lorem ipsum dolor sit amet.', image: '/img/osulloc/content-sample.png' },
+    { title: 'Product 9', description: 'Lorem ipsum dolor sit amet.', image: '/img/osulloc/content-sample.png' },
+    { title: 'Product 10', description: 'Lorem ipsum dolor sit amet.', image: '/img/osulloc/content-sample.png' }
+  ]);
   const goBack = () => {
     window.history.back();
   };
@@ -8,83 +22,16 @@
     <div class="products-contents">
       <button type="button" class="backBtn"  @click="goBack">뒤로</button>
       <h2>BEST MENU</h2>
-      <ul class="products-contents-list">
-        <li>
-          <img src="../assets/img/osulloc/content-sample.png" alt="">
-          <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </li>
-        <li>
-          <img src="../assets/img/osulloc/content-sample.png" alt="">
-          <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </li>
-        <li>
-          <img src="../assets/img/osulloc/content-sample.png" alt="">
-          <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </li>
-        <li>
-          <img src="../assets/img/osulloc/content-sample.png" alt="">
-          <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </li>
-        <li>
-          <img src="../assets/img/osulloc/content-sample.png" alt="">
-          <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </li>
-        <li>
-          <img src="../assets/img/osulloc/content-sample.png" alt="">
-          <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </li>
-        <li>
-          <img src="../assets/img/osulloc/content-sample.png" alt="">
-          <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </li>
-        <li>
-          <img src="../assets/img/osulloc/content-sample.png" alt="">
-          <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </li>
-        <li>
-          <img src="../assets/img/osulloc/content-sample.png" alt="">
-          <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </li>
-        <li>
-          <img src="../assets/img/osulloc/content-sample.png" alt="">
-          <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </li>
-        <li>
-          <img src="../assets/img/osulloc/content-sample.png" alt="">
-          <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </li>
-        <li>
-          <img src="../assets/img/osulloc/content-sample.png" alt="">
-          <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </li>
-        <li>
-          <img src="../assets/img/osulloc/content-sample.png" alt="">
-          <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </li>
-        <li>
-          <img src="../assets/img/osulloc/content-sample.png" alt="">
-          <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </li>
-        <li>
-          <img src="../assets/img/osulloc/content-sample.png" alt="">
-          <h3>title</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </li>
+      <div class="list-wrap">
+        <ul class="products-contents-list">
+          <li v-for="(product, index) in products" :key="index">
+            <img :src="product.image" :alt="product.title" />
+ 
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.description }}</p>
+          </li> 
       </ul>
+      </div>
     </div>
   </article>
 </template>
@@ -103,18 +50,24 @@
         text-align: center;
         color: #000;
       }
+      .list-wrap{
+        max-width: 70rem;
+        margin: 0 auto;
+      }
       &-list{
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        gap: 2.4rem;
         flex-wrap: wrap;
         li{
-          width: calc(100% / 5 - 1.6rem);
+          width: calc(100% / 3 - 3.2rem);
           display: flex;
           flex-direction: column;
+          justify-content: center;
           align-items: center;
           gap: 3.2rem;
-          &:nth-child(n+6){margin-top: 5rem;}
+          // &:nth-child(n+4){margin-top: 2.4rem;}
           img{
             width: 20rem;
             height: 20rem;

@@ -4,7 +4,6 @@
       <ul class="menu-list">
         <li><router-link class="menu-item" to="/">Home</router-link></li>
         <li><router-link class="menu-item" to="/about">About</router-link></li>
-        <li><router-link class="menu-item" to="/bakery">Bakery</router-link></li>
         <li><router-link class="menu-item" to="/osulloc">Osulloc</router-link></li>
 
         <!-- guide -->
@@ -23,6 +22,7 @@
     justify-content: center;
     align-items: center;
     background-color: gray;
+    overflow-x: auto;
     &-list{
       display: flex;
       justify-content: center;

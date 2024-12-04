@@ -1,9 +1,465 @@
-@import url("./reset.scss");
-@import url("./font.scss");
-@import url("./modal.scss");
-@import url("./variable.scss");
-html {
-  font-size: 62.5%;
+@charset "UTF-8";
+html,
+body,
+div,
+span,
+iframe,
+h1, h2, h3, h4, h5, h6, p, pre,
+a,
+code,
+em,
+img,
+strong, b, u, i,
+dl, dt, dd, ol, ul, li,
+fieldset,
+form,
+label,
+legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article,
+figure, figcaption,
+footer,
+header,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* list */
+ol,
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* table */
+table {
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* font */
+body {
+  color: #222;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+i,
+em {
+  font-style: normal;
+}
+
+/* button */
+button {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+/* hidden */
+caption,
+input[type=radio],
+.ally-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0); /* 구형 브라우저를 위해 사용 */
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
+          clip-path: polygon(0 0, 0 0, 0 0); /* inset(50%) 와 동일한 표현 */
+  border: 0;
+}
+
+/* ============================================================== */
+/*KB font*/
+@font-face {
+  font-family: "KBF";
+  font-style: normal;
+  font-weight: 300;
+  src: local(""), url("../fonts/kbfg/KBFGDISPLAYL.woff") format("woff"), url("../fonts/kbfg/KBFGDISPLAYL.woff2") format("woff2");
+}
+@font-face {
+  font-family: "KBF";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/kbfg/KBFGDISPLAYM.woff") format("woff"), url("../fonts/kbfg/KBFGDISPLAYM.woff2") format("woff2");
+}
+@font-face {
+  font-family: "KBF";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/kbfg/KBFGDISPLAYMI.woff") format("woff"), url("../fonts/kbfg/KBFGDISPLAYMI.woff2") format("woff2");
+}
+@font-face {
+  font-family: "KBF";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/kbfg/KBFGDISPLAYB.woff") format("woff"), url("../fonts/kbfg/KBFGDISPLAYB.woff2") format("woff2");
+}
+.mdl-modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.4rem;
+  display: none;
+}
+.mdl-modal::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+  opacity: 0;
+}
+.mdl-modal-wrap {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  padding: 6.4rem 2rem 4rem;
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.08);
+  border-radius: 2.4rem;
+  max-width: 40rem;
+  width: 100%;
+}
+.mdl-modal-body {
+  position: relative;
+  width: 100%;
+  padding: 0 2.4rem 2.4rem;
+  height: 100%;
+  max-height: calc(106vh - (5.6rem + env(safe-area-inset-top) + env(safe-area-inset-bottom) + 5.4rem));
+  overflow: auto;
+}
+.mdl-modal-body p {
+  font-family: "KBF";
+  font-size: 1.3rem;
+  color: #666;
+  line-height: 1.5;
+  font-weight: 200;
+  word-break: keep-all;
+  text-align: left;
+}
+.mdl-modal-close {
+  width: 2.4rem;
+  height: 2.4rem;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+}
+.mdl-modal-close::before {
+  content: "";
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url(@/assets/img/common/ico_tit_close_dark.png);
+  background-size: 2.4rem;
+}
+.mdl-modal-tit {
+  color: #000;
+  font-family: "KBF";
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2.4rem;
+}
+.mdl-modal .mdl-subject h1.mdl-subject-tit {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 3rem;
+}
+.mdl-modal .mdl-subject .mdl-subject-tit {
+  display: block;
+  position: relative;
+  font-family: "KBF";
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  letter-spacing: -0.06rem;
+  color: var(--gray_100);
+}
+.mdl-modal .mdl-subject .mdl-subject-txt {
+  display: block;
+  position: relative;
+  font-family: "KBF";
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: -0.06rem;
+  color: #666;
+  margin-top: 2.4rem;
+  text-align: left;
+}
+.mdl-modal[data-type=bottom] {
+  padding: 0;
+  align-items: flex-end;
+}
+.mdl-modal[data-type=bottom] .mdl-modal-tit {
+  padding-right: 3.2rem;
+  word-break: keep-all;
+  font-size: 2rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #000;
+}
+.mdl-modal[data-type=bottom] .mdl-modal-tit * {
+  font: inherit;
+}
+.mdl-modal[data-type=bottom] .mdl-modal-wrap {
+  max-width: 100%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.mdl-modal[data-type=bottom] .mdl-modal-foot {
+  padding: 2.4rem 2rem 4rem;
+}
+.mdl-modal[data-type=bottom] .mdl-modal-body {
+  padding: 0;
+}
+.mdl-modal[data-type=bottom] .mdl-modal-body .mdl-subject-group {
+  align-items: flex-start;
+}
+.mdl-modal[data-type=bottom] .mdl-modal-body .mdl-subject-group .mdl-subject-tit {
+  text-align: left;
+}
+.mdl-modal[data-type=bottom] .mdl-modal-body .mdl-subject {
+  justify-content: flex-start;
+}
+.mdl-modal[data-type=bottom] .mdl-modal-body .mdl-subject-txt {
+  font-weight: 300;
+  color: #666;
+}
+.mdl-modal[data-type=bottom][aria-hidden=false] {
+  display: flex;
+}
+.mdl-modal[data-type=bottom][aria-hidden=false] .mdl-modal-wrap {
+  animation-name: modalShowBottom;
+  animation-delay: 0.1s;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+.mdl-modal[data-type=bottom][aria-hidden=false] [data-style=btn-text] {
+  width: 100%;
+  margin-top: 2.4rem;
+}
+.mdl-modal[data-type=bottom] .mdl-modal-footer {
+  margin-top: 5.6rem;
+}
+.mdl-modal[data-type=bottom] .mdl-modal-footer .mdl-btn-wrap {
+  padding: 0;
+}
+.mdl-modal[data-type=bottom] .mdl-modal-footer .mdl-btn {
+  min-height: 5.6rem;
+  height: 5.2rem;
+  border-radius: 2.6rem;
+  border: 0;
+  background-color: #FFD700;
+  box-shadow: none;
+}
+.mdl-modal[data-type=bottom] .mdl-modal-footer .mdl-btn span {
+  font-family: "KBF";
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #1D1C19;
+}
+.mdl-modal[data-type=bottom] .mdl-modal-footer .mdl-btn[data-style=btn-text] {
+  min-height: auto;
+  height: auto;
+  display: block;
+  width: auto;
+  margin: 2.4rem auto 0;
+  background: none;
+}
+.mdl-modal[data-type=bottom] .mdl-modal-footer .mdl-btn[data-style=btn-text] span {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #999;
+  text-decoration: underline;
+}
+
+:root {
+  /* iOS 11.2 이상 */
+  --sat: env(safe-area-inset-top);
+  --sar: env(safe-area-inset-right);
+  --sab: env(safe-area-inset-bottom);
+  --sal: env(safe-area-inset-left);
+  --btn-font-l: normal normal 500 1.8rem/2rem "KBF";
+  --btn-font-m: normal normal 500 1.4rem/1.6rem "Base";
+  --btn-font-s: normal normal 400 1.4rem/1.6rem "Base";
+  --btn-font-t: normal normal 400 1.4rem/1.8rem "Base";
+  --btn-height-l: 5.6rem;
+  --btn-height-m: 4.4rem;
+  --btn-height-s: 2.8rem;
+  --color-kb-yellow-10: #FFFCEA;
+  --color-kb-yellow-40: #FFED94;
+  --color-kb-yellow-70: #FFE443;
+  --color-kb-yellow-100: #FFD700;
+  --color-kb-yellow-200: #FFC700;
+  --color-kb-yellow-300: #FFBE1C;
+  --color-red: #F66D6D;
+  --color-orange: #FF862F;
+  --color-green: #00C378;
+  --color-blue: #6B9CFF;
+  --color-red-text: #E93333;
+  --color-orange-text: #EC6300;
+  --color-green-text: #00935A;
+  --color-blue-text: #4880ED;
+  --color-gray-0: #000000;
+  --color-gray-50: #111111;
+  --color-gray-100: #333A44;
+  --color-gray-150: #444B55;
+  --color-gray-200: #555B66;
+  --color-gray-300: #666C77;
+  --color-gray-350: #777D88;
+  --color-gray-400: #888E99;
+  --color-gray-500: #999EAA;
+  --color-gray-550: #B7BABF;
+  --color-gray-600: #DADCDF;
+  --color-gray-700: #EDEDEE;
+  --color-gray-750: #F5F5F5;
+  --color-gray-800: #F7F7F7;
+  --color-gray-850: #FAFAFA;
+  --color-gray-900: #FFFFFF;
+  /* Grayscale */
+  --gray_100: #000;
+  --gray_95: #222;
+  --gray_90: #444;
+  --gray_80: #666;
+  --gray_70: #777;
+  --gray_60: #999;
+  --gray_50: #ccc;
+  --gray_40: #d7d7d7;
+  --gray_30: #e5e5e5;
+  --gray_20: #eee;
+  --gray_10: #f7f7f7;
+  --gray_0: #fff;
+  --line: #724B2F;
+  --line_gray: #ddd;
+}
+
+.mdl-btn-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  position: relative;
+}
+
+.mdl-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: auto;
+  height: auto;
+  text-decoration: none;
+  z-index: 0;
+}
+.mdl-btn span {
+  display: block;
+  font: var(--btn-font-t);
+  color: var(--color-gray-200);
+  flex: 0 auto;
+  word-break: keep-all;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+.mdl-btn:disabled span {
+  color: var(--color-gray-500);
+}
+.mdl-btn[data-size=large] {
+  height: var(--btn-height-l);
+  border-radius: 1.6rem;
+  padding: 0 2.4rem;
+  gap: 0.8rem;
+}
+.mdl-btn[data-size=large] span {
+  font: var(--btn-font-l);
+}
+.mdl-btn[data-size=medium] {
+  height: var(--btn-height-m);
+  border-radius: 1.2rem;
+  padding: 0 2rem;
+  gap: 0.8rem;
+}
+.mdl-btn[data-size=small] {
+  height: var(--btn-height-s);
+  border-radius: 0.8rem;
+  padding: 0 1.2rem;
+  gap: 0.8rem;
+}
+.mdl-btn[data-style] {
+  flex: auto;
+  width: 100%;
+}
+.mdl-btn[data-style] span {
+  text-decoration: none;
+  color: var(--color-gray-0);
+}
+.mdl-btn[data-style]:disabled {
+  background-color: var(--color-gray-600) !important;
+}
+.mdl-btn[data-style]:disabled span {
+  color: var(--color-gray-900) !important;
+}
+.mdl-btn[data-style=filed] {
+  background-color: var(--color-kb-yellow-100);
+}
+.mdl-btn[data-style=tonal-yellow] {
+  background-color: var(--color-kb-yellow-40);
+}
+.mdl-btn[data-style=tonal-gray] {
+  background-color: var(--color-gray-700);
+}
+.mdl-btn[data-style=outlined] {
+  border: 0.1rem solid var(--color-gray-500);
+}
+.mdl-btn[data-style=outlined-s] {
+  border: 0.1rem solid #BABABC;
+}
+.mdl-btn[data-style=outlined-s] span {
+  font: var(--btn-font-m);
+  color: var(--color-gray-200);
+}
+.mdl-btn[data-style=outlined]:disabled, .mdl-btn[data-style=outlined-s]:disabled {
+  background-color: transparent !important;
+  border-color: var(--color-gray-600) !important;
+}
+.mdl-btn[data-style=outlined]:disabled span, .mdl-btn[data-style=outlined-s]:disabled span {
+  color: var(--color-gray-500) !important;
 }
 
 @media screen and (max-width: 374px) {

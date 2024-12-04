@@ -3,7 +3,6 @@ import { createRouter, createWebHistory } from 'vue-router';
 // 컴포넌트 임포트
 import HomeView from '../views/HomeView.vue';
 import AboutView from '../views/AboutView.vue';
-import BakeryView from '../views/bakeryView.vue';
 import OsullocView from '../views/OsullocView.vue';
 import ProductsView from '../views/ProductsView.vue';
 import GuideButton from '../views/GuideButton.vue';
@@ -20,11 +19,6 @@ const routes = [
     path: '/about',  // about
     name: 'About',
     component: AboutView
-  },
-  {
-    path: '/bakery',  // bakery 페이지 경로
-    name: 'Bakery',
-    component: BakeryView
   },
 
   // osulloc 페이지 경로
