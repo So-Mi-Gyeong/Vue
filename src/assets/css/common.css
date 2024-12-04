@@ -462,7 +462,14 @@ input[type=radio],
   color: var(--color-gray-500) !important;
 }
 
+html {
+  font-size: 10px;
+}
+
 @media screen and (max-width: 374px) {
+  html {
+    font-size: 2.6667vw;
+  }
   .container {
     font-size: 2vw;
   }

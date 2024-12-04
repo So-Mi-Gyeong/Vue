@@ -53,6 +53,7 @@
       .list-wrap{
         max-width: 70rem;
         margin: 0 auto;
+        border: .1rem solid red;
       }
       &-list{
         display: flex;
@@ -61,7 +62,7 @@
         gap: 2.4rem;
         flex-wrap: wrap;
         li{
-          width: calc(100% / 3 - 3.2rem);
+          width: 20rem;
           display: flex;
           flex-direction: column;
           justify-content: center;

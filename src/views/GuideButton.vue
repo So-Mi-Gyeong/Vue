@@ -67,7 +67,6 @@ export default {
       <div class="guide-btn-box">
         <h4>{{ size.large }}</h4>
         <div class="mdl-btn-wrap">
-          <btn  />
           <button 
           type="button" 
           class="mdl-btn" 
