@@ -51,11 +51,13 @@
         color: #000;
       }
       .list-wrap{
+        display: flex;
+        justify-content: center;
         max-width: 70rem;
         margin: 0 auto;
-        border: .1rem solid red;
       }
       &-list{
+        width: 64.8rem;
         display: flex;
         justify-content: flex-start;
         align-items: center;
