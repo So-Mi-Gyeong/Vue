@@ -22,13 +22,11 @@ export default {
   },
   methods: {
     handleClick() {
-      // 버튼 클릭 시 실행할 로직
       console.log('버튼 클릭됨');
     }
   }
 };
 </script>
-
 <template>
   <article class="guide">
     <h2>Button</h2>
