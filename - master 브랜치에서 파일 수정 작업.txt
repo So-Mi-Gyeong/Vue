@@ -1,0 +1,9 @@
+- master 브랜치에서 파일 수정 작업
+- master 브랜치에서 .gitignore 파일에 /dist 삭제
+- master 브랜치에서 source control 에서 commit
+- master 브랜치에서 .gitignore 파일에 /dist 추가
+- master 브랜치에서 gh-pages 브랜치로 이동
+- gh-pages 브랜치에서 pull from master
+- gh-pages 브랜치에서 push
+- github에서 페이지 확인
+

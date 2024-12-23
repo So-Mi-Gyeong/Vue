@@ -2,8 +2,8 @@
   <div id="app">
     <article class="menu">
       <ul class="menu-list">
-        <li><router-link class="menu-item" to="/">Home</router-link></li>
-        <li><router-link class="menu-item" to="/about">About</router-link></li>
+        <!-- <li><router-link class="menu-item" to="/">Home</router-link></li> -->
+        <li><router-link class="menu-item" to="/about">Study</router-link></li>
         <li><router-link class="menu-item" to="/osulloc">Osulloc</router-link></li>
 
         <!-- guide -->

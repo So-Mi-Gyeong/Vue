@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 // 컴포넌트 임포트
 import HomeView from '../views/HomeView.vue';
-import AboutView from '../views/AboutView.vue';
+import AboutView from '../views/StudyView.vue';
 import OsullocView from '../views/OsullocView.vue';
 import ProductsView from '../views/ProductsView.vue';
 import GuideButton from '../views/GuideButton.vue';

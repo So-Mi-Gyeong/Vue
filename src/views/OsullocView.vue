@@ -189,4 +189,7 @@ const menuSide = ref([
       }
     }
   }
+  @media (min-width: 736px) and (max-width: 1200px) {
+    
+  }
 </style>
